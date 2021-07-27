@@ -1,0 +1,12 @@
+{
+  "name": "slack-bot",
+  "version": "0.0.1",
+  "description": "Slack bot to post names of the day to a channel.",
+  "main": "nameday_bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jukka A.",
+  "license": "ISC",
+  "dependencies": {}
+}
