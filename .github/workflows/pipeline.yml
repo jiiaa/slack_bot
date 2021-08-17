@@ -18,6 +18,6 @@ jobs:
       - name: npm install
         run: npm install
       - name: echo env
-        run: echo "${BOT_URL}"
+        run: echo "${{secrets.BOT_URL}}"
       - name: npm run application
         run: npm run start
