@@ -18,7 +18,7 @@ const attachments = [
     'pretext': 'Nyt se toimii',
     'author_name': 'Name Day Bot',
     'title': 'Nimipäivät tänään',
-    'text': '`Suomalainen kalenter:` ' + names,
+    'text': '`Suomalainen kalenteri:` ' + names,
   }
 ]
 
