@@ -15,8 +15,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-        env:
-          BOT_URL: ${{ secrets.BOT_URL }}
+      - name: create .env file
+        run: |
+          touch .env
+          echo BOT_URL = ${{ secrets.BOT_URL }} >> .env
       - name: npm install
         run: npm install
       - name: npm run application
