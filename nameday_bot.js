@@ -11,13 +11,23 @@ const month = ('0' + (date_ob.getMonth() + 1)).slice(-2);
 const today = month + date;
 const names = jsonData.nameday_list.fi[today].join(', ');
 
+const attachments = [
+  {
+    'mrkdwn_in': ['text'],
+    'color': '#36a64f',
+    'pretext': 'Nyt se toimii',
+    'author_name': 'Name Day Bot',
+    'title': 'Nimipäivät tänään',
+    'text': '`Suomalainen kalenter:` ' + names,
+  }
+]
+
 const options = {
   url: process.env.BOT_URL,
   json: true,
   body: {
     username: 'Nodejs bot',
-    title: 'A title',
-    text: names
+    attachments
   }
 };
 
