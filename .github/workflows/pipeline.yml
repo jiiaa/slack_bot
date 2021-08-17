@@ -1,8 +1,11 @@
 name: Daily name day Slack bot
 
 on:
-  schedule:
-    - cron: '*/2 * * * *'
+  # schedule:
+  #  - cron: '*/2 * * * *'
+  push:
+    branches:
+      - master
 
 jobs:
   post_names_of_the_day:
