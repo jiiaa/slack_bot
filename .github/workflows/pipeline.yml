@@ -17,7 +17,9 @@ jobs:
           node-version: '12.x'
       - name: npm install
         run: npm install
-      - name: echo env
+      - name: echo secrets
         run: echo "${{secrets.BOT_URL}}"
+      - name: echo env
+        run: echo "${{env.BOT_URL}}"
       - name: npm run application
         run: npm run start
