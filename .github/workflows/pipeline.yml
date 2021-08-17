@@ -20,6 +20,6 @@ jobs:
       - name: echo secrets
         run: echo "${{secrets.BOT_URL}}"
       - name: echo env
-        run: echo "${{env.BOT_URL}}"
+        run: echo "$BOT_URL"
       - name: npm run application
         run: npm run start
