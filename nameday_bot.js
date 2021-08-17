@@ -1,3 +1,4 @@
+require('dotenv').config();
 const request = require('request');
 
 const jsonData = require('./namedays.json');
@@ -11,7 +12,7 @@ const today = month + date;
 const names = jsonData.nameday_list.fi[today].join(', ');
 
 const options = {
-  url: '',
+  url: process.env.BOT_URL,
   json: true,
   body: {
     username: 'Nodejs bot',
