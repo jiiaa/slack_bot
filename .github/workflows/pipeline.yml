@@ -1,0 +1,19 @@
+name: Daily name day Slack bot
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+
+jobs:
+  Post the names of the day:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: npm install
+        run: npm install
+      - name: npm run application
+        run: npm start
+
