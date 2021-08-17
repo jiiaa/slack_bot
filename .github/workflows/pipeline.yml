@@ -5,7 +5,7 @@ on:
     - cron: '*/2 * * * *'
 
 jobs:
-  Post the names of the day:
+  post_names_of_the_day:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,4 +15,4 @@ jobs:
       - name: npm install
         run: npm install
       - name: npm run application
-        run: npm start
+        run: npm run start

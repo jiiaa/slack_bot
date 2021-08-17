@@ -11,7 +11,7 @@ const today = month + date;
 const names = jsonData.nameday_list.fi[today].join(', ');
 
 const options = {
-  url: 'https://hooks.slack.com/services/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',
+  url: 'https://hooks.slack.com/services/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',
   json: true,
   body: {
     username: 'Nodejs bot',
