@@ -15,7 +15,6 @@ const attachments = [
   {
     'mrkdwn_in': ['text'],
     'color': '#36a64f',
-    'pretext': 'Nyt se toimii',
     'author_name': 'Name Day Bot',
     'title': 'Nimipäivät tänään',
     'text': '`Suomalainen kalenteri:` ' + names,
@@ -35,9 +34,4 @@ request.post(options, (err, res, body) => {
   if (err) {
     console.error('Failed:', err);
   }
-  console.log('Code: %s\nMessage: %s', res.statusCode, res.statusMessage);
-  console.log('Body:', body);
 });
-
-console.log(names);
-
