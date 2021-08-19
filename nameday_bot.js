@@ -15,7 +15,6 @@ const attachments = [
   {
     'mrkdwn_in': ['text'],
     'color': '#36a64f',
-    'author_name': 'Name Day Bot',
     'title': 'Nimipäivät tänään',
     'text': '`Suomalainen kalenteri:` ' + names,
   }
