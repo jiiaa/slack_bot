@@ -4,12 +4,13 @@
   "description": "Slack bot to post names of the day to a channel.",
   "main": "nameday_bot.js",
   "scripts": {
-    "start": "node nameday_bot.js",
+    "start": "node daily_slackbot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jukka A.",
   "license": "ISC",
   "dependencies": {
+    "@slack/web-api": "^6.4.0",
     "dotenv": "^10.0.0",
     "request": "^2.88.2"
   }

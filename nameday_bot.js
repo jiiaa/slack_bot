@@ -24,7 +24,7 @@ const options = {
   url: process.env.BOT_URL,
   json: true,
   body: {
-    username: 'Nodejs bot',
+    text: 'Päivän tärkeät tiedot',
     attachments
   }
 };
@@ -34,3 +34,9 @@ request.post(options, (err, res, body) => {
     console.error('Failed:', err);
   }
 });
+
+const specialDates = {
+  "0908": "Tänään on Jukan viimeinen varsinainen työpäivä Redlandilla.",
+  "0910": "Tänään on Jukan viimeinen päivä redlanderina.",
+  "0913": "Tänään on Jukan ensimmäinen työpäivä Terveystalolla."
+}
