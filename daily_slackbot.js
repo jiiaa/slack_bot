@@ -16,15 +16,16 @@ const weekdays = {
   3: 'Keskiviikko',
   4: 'Torstai',
   5: 'Perjantai',
-  6: 'Launantai',
-  0: 'Sunday'
+  6: 'Lauantai',
+  0: 'Sunnuntai'
 }
 
 // Something fun to post
 const specialDates = {
   "0908": "Tänään on Jukan viimeinen varsinainen työpäivä Redlandilla.",
   "0910": "Tänään on Jukan viimeinen päivä redlanderina.",
-  "0913": "Tänään on Jukan ensimmäinen työpäivä Terveystalolla."
+  "0913": "Tänään on Jukan ensimmäinen työpäivä Terveystalolla.",
+  "0915": "Tänään Ilkka tulessa ja liekeissä Solitan golf-kisassa. Tsemii! Voitto kotiin!"
 }
 
 // Get the numbers of today
