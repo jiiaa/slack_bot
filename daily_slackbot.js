@@ -5,8 +5,8 @@ const jsonData = require('./namedays.json');
 // Define the basic settings
 const username = 'Päivän parhaat';
 let emoji = ':nerd_face';
-const channelId = 'C021WNBS5S4'; // #random
-// const channelId = 'C02BQRTKEJ1'; // #slackbot-test
+// const channelId = 'C021WNBS5S4'; // #random
+const channelId = 'C02BQRTKEJ1'; // #slackbot-test
 // const channelId = 'C02BXP7S64U'; // #slackbot-dev
 
 // For translating the weekday to Finnish
