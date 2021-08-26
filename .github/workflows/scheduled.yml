@@ -1,0 +1,27 @@
+name: Daily name day Slack bot
+
+on:
+  schedule:
+    - cron: '45 04 * * *'
+  # push:
+  #   branches:
+  #     - master
+
+jobs:
+  post_names_of_the_day:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: create .env file
+        run: |
+          touch .env
+          echo BOT_URL = ${{ secrets.BOT_URL }} >> .env
+          echo \n >> .env
+          echo SLACK_BOT_TOKEN = ${{ secrets.SLACK_BOT_TOKEN }} >> .env
+      - name: npm install
+        run: npm install
+      - name: npm run application
+        run: npm run start
