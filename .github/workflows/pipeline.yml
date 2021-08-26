@@ -54,7 +54,7 @@ jobs:
           custom_payload: |
              {
                attachments: [{
-                 text: `A new version was deployed to Heroku with commit ${process.env.AS_COMMIT} of ${process.env.AS_REPO} by ${process.env.AS_AUTHOR} and build took ${process.env.AS_TOOK}`
+                 text: `A new version was deployed to Heroku with commit ${process.env.AS_COMMIT} of ${process.env.AS_REPO} by ${process.env.AS_AUTHOR} and deployment took ${process.env.AS_TOOK}.`
                }]
              }
         env:
