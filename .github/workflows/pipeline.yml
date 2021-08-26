@@ -2,7 +2,8 @@ name: Heroku deployment pipeline
 
 on:
   push:
-    branches: [master, pipeline]
+    branches:
+      - master
   pull_request:
     branches: [master]
     types: [opened, synchronize]
