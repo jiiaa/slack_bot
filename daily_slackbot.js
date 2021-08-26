@@ -5,8 +5,8 @@ const jsonData = require('./namedays.json');
 // Define the basic settings
 const username = 'Päivän parhaat';
 let emoji = ':nerd_face';
-const channelId = 'C021WNBS5S4'; // #random
-// const channelId = 'C02BQRTKEJ1'; // #slackbot-test
+// const channelId = 'C021WNBS5S4'; // #random
+const channelId = 'C02BQRTKEJ1'; // #slackbot-test
 // const channelId = 'C02BXP7S64U'; // #slackbot-dev
 
 // For translating the weekday to Finnish
@@ -18,15 +18,15 @@ const weekdays = {
   5: 'Perjantai',
   6: 'Lauantai',
   0: 'Sunnuntai'
-}
+};
 
 // Something fun to post
 const specialDates = {
-  "0908": "Tänään on Jukan viimeinen varsinainen työpäivä Redlandilla.",
-  "0910": "Tänään on Jukan viimeinen päivä redlanderina.",
-  "0913": "Tänään on Jukan ensimmäinen työpäivä Terveystalolla.",
-  "0915": "Tänään Ilkka tulessa ja liekeissä Solitan golf-kisassa. Tsemii! Voitto kotiin!"
-}
+  '0908': 'Tänään on Jukan viimeinen varsinainen työpäivä Redlandilla.',
+  '0910': 'Tänään on Jukan viimeinen päivä redlanderina.',
+  '0913': 'Tänään on Jukan ensimmäinen työpäivä Terveystalolla.',
+  '0915': 'Tänään Ilkka tulessa ja liekeissä Solitan golf-kisassa. Tsemii! Voitto kotiin!'
+};
 
 // Get the numbers of today
 const date_obj = new Date();
@@ -37,6 +37,7 @@ const year = date_obj.getFullYear();
 // Set the weekday in Finnish
 const weekday = weekdays[date_obj.getDay()].toLowerCase();
 
+// eslint-disable-next-line
 const startOfYear = new Date(year, 0, 1, 02, 00, 00);
 const endOfYear = new Date(year, 11, 31, 23, 59, 59);
 
@@ -76,7 +77,7 @@ const attachments = [
 // Check if it is a special day
 const specialNote = specialDates[today];
 let specialAttachment = {};
-if (specialNote) { 
+if (specialNote) {
   specialAttachment = {
     'mrkdwn_in': ['text'],
     'color': '#0021FF',
@@ -91,7 +92,7 @@ const sendMessage = async () => {
   const client = new WebClient(process.env.SLACK_BOT_TOKEN, {
     logLevel: LogLevel.DEBUG
   });
-  
+
   try {
     const result = await client.chat.postMessage({
       channel: channelId,
