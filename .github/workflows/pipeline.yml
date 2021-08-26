@@ -42,9 +42,9 @@ jobs:
         if: ${{ github.event_name == 'push' && false == contains(toJson(github.event.commits.*.message), '#skip') }}
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY}}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: 'daily-slackbot'
-          heroku-email: 'jukkaa@live.com'
+          heroku_email: 'jukkaa@live.com'
       - name: job was suuccess message
         if: ${{ success() }}
         uses: 8398a7/action-slack@v3
