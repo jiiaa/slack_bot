@@ -109,7 +109,7 @@ const dailySlackBot = async () => {
         'text': '`Suomalainen kalenteri:` ' + names,
       }
     ];
-  };
+  }
 
   // Check if it is a special day
   const specialNote = specialDates[today];
