@@ -1,7 +1,6 @@
 require("dotenv").config();
 const axios = require("axios");
 const { WebClient, LogLevel } = require("@slack/web-api");
-const jsonData = require("./namedays.json");
 
 // Define the basic settings
 const username = "Päivän parhaat";
@@ -61,7 +60,7 @@ const getDailyTrump = async () => {
     const trump = {
       mrkdwn_in: ["text"],
       color: "#3e3e3e",
-      title: "Daily Donalt Trump :sheep",
+      title: "Daily Donald Trump :sheep:",
       text: res.data.message,
     };
     return trump;
@@ -128,13 +127,13 @@ const dailySlackBot = async () => {
       {
         mrkdwn_in: ["text"],
         color: "#36a64f",
-        title: "Nimipäivät tänään :flag-fi",
+        title: "Nimipäivät tänään :flag-fi:",
         text: "`Suomenkielinen kalenteri:` " + allNames.fi,
       },
       {
         mrkdwn_in: ["text"],
         color: "#36a64f",
-        title: "Nimipäivät tänään :flag-se",
+        title: "Namnsdagar idag :flag-se:",
         text: "`Ruotsinkielinen kalenteri:` " + allNames.se,
       },
     ];
