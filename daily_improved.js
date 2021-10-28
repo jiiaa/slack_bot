@@ -128,13 +128,13 @@ const dailySlackBot = async () => {
         mrkdwn_in: ["text"],
         color: "#36a64f",
         title: "Nimipäivät tänään :flag-fi:",
-        text: "`Suomenkielinen kalenteri:` " + allNames.fi,
+        text: "`Suomenkielinen kalenteri:` " + allNames.fi.join(', '),
       },
       {
         mrkdwn_in: ["text"],
         color: "#36a64f",
         title: "Namnsdagar idag :flag-se:",
-        text: "`Ruotsinkielinen kalenteri:` " + allNames.se,
+        text: "`Ruotsinkielinen kalenteri:` " + allNames.se.join(', '),
       },
     ];
   }
