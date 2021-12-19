@@ -118,7 +118,7 @@ const dailySlackBot = async () => {
 
   // Get the names of the date from the nameday API
   const today = month2digit + date2digit;
-  const allNames = await getNamesOfDate('1121');
+  const allNames = await getNamesOfDate(today);
 
   // Build the name day text as an array
   let attachments = [];
