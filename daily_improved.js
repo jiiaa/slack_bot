@@ -21,7 +21,7 @@ const weekdays = {
 };
 
 const getNamesOfDate = async (thisDate) => {
-  const url = `https://api-the-great.herokuapp.com/api/v1/nameday?date=${thisDate}&fi=1&se=1`;
+  const url = `https://api-the-great.herokuapp.com/api/v1/nameday?date=${thisDate}&fi=1&se=1&ox=1`;
   const config = {
     headers: {
       'x-api-key': process.env.API_KEY,
@@ -118,23 +118,27 @@ const dailySlackBot = async () => {
 
   // Get the names of the date from the nameday API
   const today = month2digit + date2digit;
-  const allNames = await getNamesOfDate(today);
+  const allNames = await getNamesOfDate('1121');
 
   // Build the name day text as an array
   let attachments = [];
-  if (allNames.fi && allNames.se) {
+  if (allNames.fi || allNames.se || allNames.ox) {
     attachments = [
       {
         mrkdwn_in: ['text'],
         color: '#36a64f',
-        title: 'Nimipäivät tänään :flag-fi:',
-        text: '`Suomenkielinen kalenteri:` ' + allNames.fi.join(', '),
+        title: 'Nimipäivät tänään',
+        text: '`Suomenkielinen kalenteri:` ' + allNames.fi.join(', ') + ' :flag-fi:',
       },
       {
         mrkdwn_in: ['text'],
         color: '#36a64f',
-        title: 'Namnsdagar idag :flag-se:',
-        text: '`Ruotsinkielinen kalenteri:` ' + allNames.se.join(', '),
+        text: '`Ruotsinkielinen kalenteri:` ' + allNames.se.join(', ') + ' :flag-se:',
+      },
+      {
+        mrkdwn_in: ['text'],
+        color: '#36a64f',
+        text: '`Ortodoksinen kalenteri:` ' + allNames.ox.join(', ') + ' :orthodox_cross:',
       },
     ];
   }
